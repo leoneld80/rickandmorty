@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from "react";
+import classes from "./Filtro.module.css";
 
 function Filtro() {
 
+const [ activo, setActivo ] = useState(false);
+const [ option, setOption ] = useState("");
 
+const filtrar = () => {
+  console.log("filtrar");
+}
 
   return (
     //filter badges
@@ -15,17 +21,16 @@ function Filtro() {
             </div>
           </div>
           <div className="row justify-content-center align-items-center g-2">
-            <div className="col-12">
-              <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                <span class="badge rounded-pill  text-bg-light">Humano</span>
-
-              </div>
+            <div className="col-12 ">
+              <span class="badge rounded-pill  text-bg-light link" onChange={setOption}>Humano</span>
+              <span class="badge rounded-pill  text-bg-light link">Alien</span>
+              <span class="badge rounded-pill  text-bg-light link">Humanoide</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Filtro
+export default Filtro;

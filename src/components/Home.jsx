@@ -68,6 +68,7 @@ function Home() {
       return (
         <div className="container mt-4 align-items-center">
           <row className="row mt-4 justify-content-center align-items-center g-2">
+            <Filtro></Filtro>
             <button
               className="btn btn-primary"
               onClick={() => setMostrarTodos(true)}

@@ -7,8 +7,6 @@ function Personaje(props) {
 
   // function NoEncontrado() {
   //   return (
-      
-       
 
   //     <div className="row justify-content-center align-items-center g-2">
   //       <div className="col-12">
@@ -18,48 +16,35 @@ function Personaje(props) {
   //   );
   // }
 
-
   return (
-
-
-    <div className="
-    col-4 
-    align-items-center
-    justify-content-center
-    mb-4
-    mt-4
-    "
-    >
-      <div className="card">
-        <div className="card-body">
-          <div className="row justify-content-center align-items-center g-2">
-            <div className="col-12">
-              <span>
-                {status === "Alive" ? (
-                  <BsCircleFill style={{ color: "green" }}></BsCircleFill>
-                ) : status === "Dead" ? (
-                  <BsCircleFill style={{ color: "red" }}></BsCircleFill>
-                ) : (
-                  <BsCircleFill style={{ color: "gray" }}></BsCircleFill>
-                )}
-              </span>
-            </div>
+    <div className={`col-3 ${classes.contenedor}`}>
+      <div className={`${classes.cardpersonaje}`}>
+        <div className="">
+          <div className={classes.status}>
+            <span>
+              {status === "Alive" ? (
+                <BsCircleFill style={{ color: "green" }}></BsCircleFill>
+              ) : status === "Dead" ? (
+                <BsCircleFill style={{ color: "red" }}></BsCircleFill>
+              ) : (
+                <BsCircleFill style={{ color: "gray" }}></BsCircleFill>
+              )}
+            </span>
+            <img
+              src={image}
+              className={`${classes.cardimg}`}
+              alt="..."
+            />
           </div>
-          <img src={image} className="card-img-top" alt="..." />
-          <h3 className="align-items-center">{name}</h3>
-          <ul className="list-group list-group-flush align-items-center">
-            <li className="list-group-item">{species}</li>
-            <li className="list-group-item">{gender}</li>
-            <button type="button" className="btn btn-primary">
-              Ver más
-            </button>
-          </ul>
+            <div className="">
+              <div className={` ${classes.descripcion}`}>
+                <h5 className="">{name}</h5>
+                <p>{species}</p>
+              </div>
+            </div>
         </div>
       </div>
-
     </div>
-  
-
   );
 }
 
