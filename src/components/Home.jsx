@@ -10,6 +10,7 @@ function Home() {
   const [personajes, setPersonajes] = useState([]);
   const [info, setInfo] = useState();
   const [mostrarTodos, setMostrarTodos] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchCharacters = (url) => {
     try {
@@ -56,7 +57,15 @@ function Home() {
   };
 
   useEffect(() => {
-    fetchCharacters(paginaInicial);
+    try {
+      setTimeout(() => {
+      setLoading(false);
+      }, 1000);
+      
+      fetchCharacters(paginaInicial);
+    } catch (error) {
+      
+    }
   }, []);
 
   // const handleMostrarTodos = () => {
@@ -102,6 +111,7 @@ function Home() {
               status={personaje.status}
               gender={personaje.gender}
               url={personaje.url}
+              loading={loading}
             />
           ))}
         </div>
@@ -113,16 +123,13 @@ function Home() {
     );
   }
 
+   
+  
+
   return (
     <>
       <Buscar handleSearch={handleSearch}></Buscar>
-      {mostrarTodos ? (
-        <>
-          <MostrarListado></MostrarListado>
-        </>
-      ) : (
-        <BotonMostrarTodos></BotonMostrarTodos>
-      )}
+        <MostrarListado></MostrarListado>
     </>
   );
 }
