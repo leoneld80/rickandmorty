@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BsCircleFill } from "react-icons/bs";
 import classes from "./Personaje.module.css";
 import { Link } from "react-router-dom";
 
 function Personaje(props) {
-  const { id, name, image, species, status, loading } = props;
+  const { id, name, image, species, status } = props;
 
-function Loader () {  
+// function Loader () {  
 
-  return (
-    <div className="row justify-content-center align-items-center g-2">
-      <div className="spinner-border text-light" role="status">
-        <span className="visually-hidden">Loading...</span>
+//   return (
+//     <div className="row justify-content-center align-items-center g-2">
+//       <div className="spinner-border text-light" role="status">
+//         <span className={`visually-hidden ${classes.loading}`}>Loading...</span>
 
-    </div>
-    </div>
-  );
-}
+//     </div>
+//     </div>
+//   );
+// }
 
 
 
@@ -33,7 +33,6 @@ function Loader () {
 
   return (
     <div className={`col-3 ${classes.contenedor}`}>
-      {loading ? <Loader></Loader> : 
       <Link to={`/personaje/${id}`}>
       <div className={`${classes.cardpersonaje}`}>
         <div className="">
@@ -62,7 +61,6 @@ function Loader () {
         </div>
       </div>
       </Link>
-    }
     </div>
   );
 }

@@ -1,15 +1,13 @@
-
 .cardimg {
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-
+  z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.status span{
-    z-index: 1;
-    position: absolute;
-    margin-left: 5px;
+.status span {
+  z-index: 1;
+  position: absolute;
+  margin-left: 5px;
 }
 
 /* .cardpersonaje {
@@ -17,27 +15,25 @@
 } */
 
 .descripcion {
-z-index: 1;
-/* position: absolute; */
-/* background-color: rgba(0, 0, 0, 0.5); */
-color: whitesmoke;
-display: flex;
-flex-direction: column;
-transition: opacity 0.5s ease-in-out;
-background-color: rgba(128, 128, 128, 0.288);
-padding: 5px;
-
+  z-index: 1;
+  /* position: absolute; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.5s ease-in-out;
+  background-color: rgba(128, 128, 128, 0.288);
+  padding: 5px;
 }
 
-.cardpersonaje:hover  {
-    cursor: pointer;
-    transform: scale(1.02);
-    transition: transform 0.5s ease-in-out;
-
+.cardpersonaje:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: transform 0.5s ease-in-out;
 }
 
 .cardpersonaje {
-    /* display: flex;
+  /* display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -45,9 +41,10 @@ padding: 5px;
 }
 
 .contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f0c29;
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }

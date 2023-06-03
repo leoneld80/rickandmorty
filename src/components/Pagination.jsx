@@ -8,13 +8,13 @@ function Pagination({ handleNextPage, handlePrevPage}) {
         <ul className="pagination justify-content-center mt-2 mb-4">
           <li className="page-item" >
             <button className="page-link" tabIndex={-1} aria-disabled="true" onClick={handlePrevPage}>
-              Anterior
+              Previous
             </button>
           </li>
      
           <li className="page-item" >
             <button className="page-link" onClick={handleNextPage}>
-              Siguiente
+              Next
             </button>
           </li>
         </ul>

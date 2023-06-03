@@ -10,10 +10,10 @@ function Buscar({handleSearch, set}) {
                 type="text"
                 className="form-control"
                 id="personaje"
-                placeholder="Buscar personaje"
+                placeholder="Search by name"
               />
               <button className="btn btn-outline-secondary" type="submit">
-                Buscar
+                Search
               </button>
             </div>
           </form>

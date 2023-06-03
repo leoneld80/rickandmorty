@@ -4,12 +4,13 @@ import Pagination from "./Pagination";
 import "./Home.css";
 import Buscar from "./Buscar";
 import Filtro from "./Filtro";
+import Loader from "./Loader";
 
 function Home() {
   const paginaInicial = "https://rickandmortyapi.com/api/character";
   const [personajes, setPersonajes] = useState([]);
   const [info, setInfo] = useState();
-  const [mostrarTodos, setMostrarTodos] = useState(false);
+  // const [mostrarTodos, setMostrarTodos] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const fetchCharacters = (url) => {
@@ -32,7 +33,7 @@ function Home() {
       .then((data) => {
         setPersonajes(data.results);
         setInfo(data.info);
-        setMostrarTodos(true);
+        // setMostrarTodos(true);
       })
       .catch((error) => console.log(error));
   };
@@ -72,28 +73,30 @@ function Home() {
   //   setMostrarTodos(true);
   // }
 
-  function BotonMostrarTodos() {
+  // function BotonMostrarTodos() {
    
-      return (
-        <div className="container mt-4 align-items-center">
-          <row className="row mt-4 justify-content-center align-items-center g-2">
-            <Filtro></Filtro>
-            <button
-              className="btn btn-primary"
-              onClick={() => setMostrarTodos(true)}
-            >
-              Mostrar todos
-            </button>
-          </row>
-        </div>
-      );
+  //     return (
+  //       <div className="container mt-4 align-items-center">
+  //         <row className="row mt-4 justify-content-center align-items-center g-2">
+  //           <Filtro></Filtro>
+  //           <button
+  //             className="btn btn-primary"
+  //             onClick={() => setMostrarTodos(true)}
+  //           >
+  //             Mostrar todos
+  //           </button>
+  //         </row>
+  //       </div>
+  //     );
 
-  }
+  // }
 
   function MostrarListado() {
     return (
       <div className="container mt-4">
         <Filtro></Filtro>
+        {loading ? <Loader></Loader> :
+          <>
         <Pagination
           handleNextPage={handleNextPage}
           handlePrevPage={handlePrevPage}
@@ -101,24 +104,27 @@ function Home() {
 
 
         <div className="row justify-content-center align-items-center g-2">
+          <div className="card-group">
           {personajes?.map((personaje) => (
             <Personaje
-              key={personaje.id}
-              id={personaje.id}
-              name={personaje.name}
-              image={personaje.image}
-              species={personaje.species}
-              status={personaje.status}
-              gender={personaje.gender}
-              url={personaje.url}
-              loading={loading}
+            key={personaje.id}
+            id={personaje.id}
+            name={personaje.name}
+            image={personaje.image}
+            species={personaje.species}
+            status={personaje.status}
+            gender={personaje.gender}
+            url={personaje.url}
             />
-          ))}
+            ))}
+        </div>
         </div>
         <Pagination
-          handleNextPage={handleNextPage}
-          handlePrevPage={handlePrevPage}
+        handleNextPage={handleNextPage}
+        handlePrevPage={handlePrevPage}
         />
+        </>
+          }
       </div>
     );
   }
